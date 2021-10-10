@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ PAGE</title>
+    <link rel="icon" href="cplogo.png" type="image/icon type">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style type="text/css">
+    body{
+    font-family: 'Work Sans', sans-serif;
+}
+.faq-heading{
+    border-bottom: #777;
+    padding: 20px 60px;
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+.hr-line{
+  width: 60%;
+  margin: auto;
+  
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    /* background-color: #eee; */
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+   width: 50%; 
+   padding: auto;
+   
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+.footer {
+display: block;
+box-sizing: border-box;
+height: 500px;
+background-color: #654aa7;
+position: relative;
+clip-path: ellipse(66% 100% at 46.48% 100%);
+}
+.container {
+ 
+  font-style: bold;
+}
+
+.text-block {
+
+  bottom: 200px;
+  right: 150px;
+
+  color: black;
+}
+</style>
+
+<body>
+    <!-- Logo -->
+    <nav class="navbar navbar-expand-sm bg-light">
+    <img src="logo.png" class="rounded" alt="">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="HomePage.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" onclick="openForm()">Register Here</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">FAQ's</a>
+    </li>
+
+
+  </ul>
+
+</nav>
+    <main>
+
+        <h1 class="faq-heading">FAQ'S</h1>
+        <section class="faq-container">
+            <div class="faq-one">
+
+                <!-- faq question -->
+                <h1 class="faq-page">Why training is important?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Training and developing employees is critical to the future success of your company. Employees need to be productive, efficient, and adaptable and improve skills in several areas including communication, critical thinking, and problem solving.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-two">
+
+                <!-- faq question -->
+                <h1 class="faq-page">Am I eligible for training?</h1>
+
+                <!-- faq answer -->
+
+                <div class="faq-body">
+                    <p>Yes,You are eligible if you are student from Computer science.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+
+            <div class="faq-three">
+
+                <!-- faq question -->
+<h1 class="faq-page">Is this training theoretical or Practical?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>This training course is both theoretical as well as practical.</p>
+                </div>
+            </div>
+            <div class="faq-four"></div>
+<h1 class="faq-page">What will be the cost of Training?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>It is free of cost.</p>
+                </div>
+            </div>
+ <div class="faq-five"></div>
+<h1 class="faq-page">What will be the mode of training?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>It is totally Online.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script type="text/javascript">
+        var faq = document.getElementsByClassName("faq-page");
+var i;
+
+for (i = 0; i < faq.length; i++) {
+    faq[i].addEventListener("click", function () {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var body = this.nextElementSibling;
+        if (body.style.display === "block") {
+            body.style.display = "none";
+        } else {
+            body.style.display = "block";
+        }
+    });
+}
+    </script>
+    
+    
+</body>
+
+
+</html>
