@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Training | cwipedia</title>
+	<link rel="icon" href="cplogo.png" type="image/icon type">
+  
+  
+   
+</head>
+<style type="text/css">
+  
+  h1{
+    text-align: center;
+    padding-top: 130px;
+  }
+  h2{
+    margin-right: 10px;
+    position: relative;
+  }
+  img{
+    margin-left: 30px;
+
+  }
+  /* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 600px;
+
+  padding-top: 20px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+
+}
+.form-container .cancel {
+  background-color: red;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover{
+    opacity: 0.7;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+  
+}
+.fa-instagram{
+  background: #007bb5;
+  color: white;
+}
+.wrapper {
+  height: 100px;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  position: absolute;
+
+}
+
+.typing-demo {
+  width: 43ch;
+  animation: typing 2s steps(43), blink .5s step-end infinite alternate;
+  white-space: wrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.centered {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+display: block;
+box-sizing: border-box;
+height: 500px;
+background-color: #654aa7;
+position: relative;
+clip-path: ellipse(66% 100% at 46.48% 100%);
+}
+
+.container {
+ 
+  font-style: bold;
+}
+
+.text-block {
+
+  bottom: 200px;
+  right: 150px;
+
+  color: black;
+}
+
+
+</style>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+  
+
+  <!-- Alert -->
+  <div id="myAlert" class="alert alert-success collapse">
+    <a id="linkClose" href="#" class="close">&times;</a>
+    <strong>Success</strong>Thank you for registration for Training.
+</div>
+<!-- Pop-up form -->
+  <div class="form-popup" id="myForm">
+  <form action="insertdata.php" method="POST" class="form-container">
+    <h1 style="font-size: 20px;">Registration for Training</h1>
+
+    <input type="text" placeholder="Student Name" name="Name" id="f1" required>
+
+    
+    <input type="text" placeholder="Email Address" name="email" id="f2" required>
+    <input type="text" placeholder="Contact No" name="con" id="f3" required>
+    <input type="text" placeholder="Branch" name="branch" id="f4" required>
+    <input type="text" placeholder="College Name" name="clg" id="f5" required>
+
+    <input type="checkbox" name="ch1" required>
+    <label>Terms & Conditions</label>
+    <button type="submit" id="btnSubmit" class="btn btn-light" width="100px">Submit</button>
+    
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    
+
+    
+  </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  function openForm(){
+    document.getElementById("myForm").style.display="block";
+  }
+  function  closeForm() {
+    document.getElementById("myForm").style.display="none";
+  }
+  $(document).ready(function () {
+
+        $('#btnSubmit').click(function () {
+            $('#myAlert').show('fade');
+        });
+
+        $('#linkClose').click(function () {
+            $('#myAlert').hide('fade');
+        });
+
+    });
+
+</script>
+<!-- logo -->
+	<nav class="navbar navbar-expand-sm bg-light">
+    <img src="logo.png" class="rounded" alt="">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" onclick="openForm()">Register Here</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="faq.html">FAQ's</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="chat.html">Chat with us</a>
+    </li>
+    
+
+
+  </ul>
+
+</nav>
+<div class="row">
+  <div class="col">
+
+<img  src="study.gif" alt="" align="left"></div>
+<div class="col">
+  <h1>Training by cwipedia.in</h1>
+  <h6>Empowering diploma student community by delivering valueble resources and training</h6>
+
+  <a href="https://www.cwipedia.in/" class="btn btn-light" role="button">#explore</a>
+  <a class="btn btn-light" role="button" onclick="openForm()">Register Here</a>
+</div>
+<div class="container">
+  <div class="row">
+    <h1 class="center">Sponsered By</h1>
+  </div>
+  <div class="row">
+    <img style="width: 40%;" src="gravity.jpeg" class="center">
+  </div>
+  <div class="row">
+    <p style="margin-left: 440px; font-size: 30px; font-style: bold;">Private Limited</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+
+<img src="flying.gif" alt="" align="left"></div>
+<div class="col">
+  <p style="font-size: 40px; font-style: bold; text-align: center; margin-top: 100px;">#super-fast</p>
+  <p style="font-size: 40px; font-style: all;">Learn by doing in very quick way as you think,</p>
+  <div class="wrapper">
+    <div class="typing-demo">
+      "Never let the odds keep you from doing what you know in your heart you must do"--H.Jackson Brown
+    </div>
+  </div>
+  
+</div>
+</div>
+<div class="container">
+  <img style=" width: 80%;  filter: blur(8px);
+  -webkit-filter: blur(8px);" src="scot.jpg" alt="" class="center">
+   <div class="text-block">
+    <p style="font-size: 50px; text-align: center;  ">No need to Go anywhere</p>
+    <p style="font-size: 45px; text-align: center;">Learn from your Home with flexible hours</p>
+  </div>
+</div>
+<br>
+<br>
+<!--Social Links -->
+<div style="padding-left: 500px;"class="row">
+<a style="text-decoration: none;" href="https://www.facebook.com/cwipedia.in/" class="fa fa-facebook"></a>
+<a style="text-decoration: none;" href="https://twitter.com/cwipedia/status/1403612271276871683" class="fa fa-twitter"></a>
+<a style="text-decoration: none;" href="https://www.linkedin.com/company/cwipedia" class="fa fa-linkedin"></a>
+<a style="text-decoration: none;" href="https://www.youtube.com/channel/UCzARaaZ1furvIwUaNUsORWQ" class="fa fa-youtube"></a>
+<a style="text-decoration: none;" href="https://www.instagram.com/cwipedia.in/?hl=en" class="fa fa-instagram"></a>
+<a style="text-decoration: none;" href="https://telegram.me/msbteresources" class="fa fa-telegram"></a>
+</div>
+</div>
+<hr>
+<!-- footer -->
+<div class="footer">
+<div class="content">
+<div class="row">
+<h1 style="font-size: 60px; font-family: boot antiqua;" class="center">We Love to Code</h1>
+</div>
+<br>
+<br>
+<br>
+<div style="padding-left: 550px;" class="row">
+  <b><a style="text-decoration: none; color: black;" href="Contact.html" target="_blank">Contact us</a>
+  <div style="padding-left: 100px;" class="row"></b>
+  <b><a style="text-decoration: none; color:black; " href="https://www.cwipedia.in/p/privacy-policy-effective-date-december.html" target="_blank">Privacy & Policy</a></b>
+</div>
+</div>
+</div>
+<hr>
+
+
+</body>
+</html>
